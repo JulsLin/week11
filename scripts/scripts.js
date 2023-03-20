@@ -20,9 +20,16 @@
 // greet('Juls')
 
 
+const radiusPara = document.querySelector("#radius");
+console.log(radiusPara)
+const resultPara = document.querySelectorAll("#result");
+console.log(resultPara)
+
 function CircleCalculate(radius) {
     if(isNaN(radius)){
-        alert("This is not a number");
+        // update the textcontent or innertext property of the resultPara;
+        resultPara.textcontent = "This is not a number";
+        
     }
     else {
     let area = Math.PI * radius * radius;
@@ -30,7 +37,10 @@ function CircleCalculate(radius) {
     }
 }
 let userValue = prompt("Enter a number:");
+    radiusPara.textContent += userValue;
+
 let result = CircleCalculate(userValue);
 if (result !== undefined) {
-    alert(`The area of a circle with radius ${userValue} is ${Math.round(result)}`)
+    resultPara.textcontent = `The area of a circle with radius ${userValue} is ${Math.round(result)}`;
 }
+
