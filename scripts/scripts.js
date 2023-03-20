@@ -21,9 +21,16 @@
 
 
 function CircleCalculate(radius) {
+    if(isNaN(radius)){
+        alert("This is not a number");
+    }
+    else {
     let area = Math.PI * radius * radius;
     return area;
+    }
 }
 let userValue = prompt("Enter a number:");
 let result = CircleCalculate(userValue);
-alert(`The area of a circle with radius ${userValue} is ${Math.round(result)}`)
+if (result !== undefined) {
+    alert(`The area of a circle with radius ${userValue} is ${Math.round(result)}`)
+}
